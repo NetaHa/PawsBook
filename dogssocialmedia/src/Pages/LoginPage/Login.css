@@ -1,0 +1,82 @@
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 300px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 24px;
+  border-radius: 6px;
+}
+
+label {
+  display: flex;
+  flex-direction: column;
+  font-weight: bold;
+  gap: 6px;
+}
+
+input[type="email"], 
+input[type="password"], 
+button {
+  padding: 10px 15px;
+  font-size: 16px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  outline: none;
+}
+
+button {
+  background-color: #007BFF;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+.remember-me {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+input[type="checkbox"] {
+  margin: 0;
+}
+
+.login-container {
+  background-image: url("https://e0.pxfuel.com/wallpapers/619/537/desktop-wallpaper-teal-and-white-dog-paw-prints-puppy-bone-and-hearts-tile-pattern-paw-print-background-dog-paw-print-paw-print-thumbnail.jpg");
+}
+
+form {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-color: rgba(255, 255, 255, 255);
+}
+
+.register-prompt {
+  margin-top: 12px;
+  font-size: 14px;
+  text-align: center;
+}
+
+.register-prompt a {
+  color: #007BFF;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.register-prompt a:hover {
+  color: #0056b3;
+}

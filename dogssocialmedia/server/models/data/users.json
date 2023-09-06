@@ -1,0 +1,72 @@
+[
+  {
+    "userName": "galo11",
+    "ownerName": "gal",
+    "dogName": "tomi",
+    "email": "gal@gmail.com",
+    "password": "$2b$10$VzmGnbLlrUCpQld3sgut.usCIgnsRik67tf6kv2z8cOk4HhlO9HLq",
+    "id": "aca4262c-7960-49ed-90f6-d9d3e37e5a3e"
+  },
+  {
+    "userName": "admin",
+    "ownerName": "admin",
+    "dogName": "admin's dog",
+    "email": "admin@gmail.com",
+    "password": "$2b$10$xT5Tjp1SsUiRj45xNDWgLeQup3pb2hmfAmWxLGKiGzzbFKOgNyweu",
+    "id": "838177db-6b6a-4168-a805-d41d0010ec6a"
+  },
+  {
+    "userName": "yael97",
+    "ownerName": "yael",
+    "dogName": "fredi",
+    "email": "yael@gmail.com",
+    "password": "$2b$10$OtKvbyfznr3/M1yKA5mOzuFsUc/GDNPSfYbsPc7vnRwlISH3fmzSO",
+    "id": "20967433-769f-4238-b06e-cbb51eafe742"
+  },
+  {
+    "userName": "neta98",
+    "ownerName": "neta",
+    "dogName": "milo",
+    "email": "neta@gmail.com",
+    "password": "$2b$10$DRADuFeHgaDwc7AFhV0ii.9EiuNOs7cWwCyjDJ3ehM84kkrBfjHJy",
+    "id": "0aba3e0c-3716-481a-a727-18b2db57fa81"
+  },
+  {
+    "userName": "Guy98",
+    "ownerName": "Guy",
+    "dogName": "Luna",
+    "email": "guy@gmail.com",
+    "password": "$2b$10$VWtPl9nAE4atLIKDfLA4a.hPcTIwJmbHzaR19m1H1rT841/umMXPy",
+    "id": "3771bab2-28f1-4fda-a762-b898d1d33292"
+  },
+  {
+    "userName": "Tomer10",
+    "ownerName": "Tomer",
+    "dogName": "Fredo",
+    "email": "tomer@gmail.com",
+    "password": "$2b$10$3O9eKkG1.Qq/h9e2sLxBPO84y7J6h2k0LeDng7ra0W5O2BFKh117q",
+    "id": "280265ff-c9d4-4fd1-a7a4-53dd11ab1ccc",
+    "activityHistory": [
+      {
+        "event": "created",
+        "timestamp": "2023-09-05T16:53:33.059Z"
+      }
+    ]
+  },
+  {
+    "userName": "TOMI",
+    "ownerName": "tom",
+    "dogName": "mooni",
+    "email": "tomi@gmail.com",
+    "password": "$2b$10$e24MILwbHXRClDAxrOrzwe75tFVLGK2CVddhflnRUWb.cy8U1WNXO",
+    "id": "fe158fe1-8299-448a-8eb3-1a994f7cd7db",
+    "activityHistory": [
+      {
+        "event": "created",
+        "timestamp": "2023-09-05T18:03:06.099Z"
+      }
+    ],
+    "following": [],
+    "followers": []
+  }
+]
