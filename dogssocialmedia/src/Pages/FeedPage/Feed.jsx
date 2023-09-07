@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import MainLayout from '../../layouts/MainLayout';
 import './Feed.css';
+//import { getToken } from '../../Components/tokenHelper';
 
 const Feed = () => {
     const [postContent, setPostContent] = useState('');
@@ -159,7 +160,6 @@ const Feed = () => {
             </div>     
         </div>
         </MainLayout>
-
     );
 }
 

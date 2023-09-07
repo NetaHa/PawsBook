@@ -1,39 +1,18 @@
-// const express = require('express');
-// const fs = require('fs');
-// const router = express.Router();
-
-// const getUsersFromFile = () => {
-//     try {
-//         const data = fs.readFileSync('./models/data/users.json', 'utf8');
-//         return JSON.parse(data);
-//     } catch (err) {
-//         console.error("Error reading users from file:", err);
-//         return [];
-//     }
-// };
-
-// // GET Endpoint to fetch all users
-// router.get('/api/users', (req, res) => {
-//     const userId = req.userId;
-//     const user = User.findById(userId);
-//     if (!user) {
-//         return res.status(404).json({ error: 'User not found' });
-//     }
-//     const loggedInUserId = userId;  // we assume you send the logged-in user's ID as a query parameter
-
-//     const allUsers = getUsersFromFile();
-//     const filteredUsers = allUsers.filter(user => user.id !== loggedInUserId)
-//                                   .map(({password, ...rest}) => rest);  // Exclude the password for security reasons
-
-//     res.json(filteredUsers);
-// });
-
-// module.exports = router;
 const express = require('express');
 const router = express.Router();
-const { User } = require('../models/User'); 
+const { User, readJsonAsync } = require('../models/User');
 
-router.post('/follow/:userId', async (req, res) => {
+// GET Endpoint to fetch all users
+router.get('/api/users', async (req, res) => {
+    try {
+        const users = await readJsonAsync(User.dbPath);
+        res.json(users);  // Send users as JSON response
+    } catch (err) {
+        console.error(err);
+        res.status(500).send('Error fetching users');
+    }
+});
+router.post('/api/users/follow/:userId', async (req, res) => {
     console.log("Follow route accessed");
     try {
         const userIdToFollow = req.params.userId; 
@@ -58,7 +37,7 @@ router.post('/follow/:userId', async (req, res) => {
         res.status(500).send({ message: 'Error in following the user', error });
     }
 });
-router.post('/unfollow/:userId', async (req, res) => {
+    router.post('/api/users/unfollow/:userId', async (req, res) => {
     console.log("Unfollow route accessed");
     try {
         const userIdToUnfollow = req.params.userId;

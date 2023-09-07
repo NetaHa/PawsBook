@@ -12,7 +12,12 @@ app.use(cors());
 app.use(bodyParser.json());
 app.use(userRoutes);
 app.use(postRoutes);
-app.use(followingRoutes); 
+app.use(followingRoutes);
+
+app.use((err, req, res, next) => { 
+  res.status(500).send('Something broke!');
+});
+
 
 // Registration route
 app.post('/api/users/register', async (req, res) => {

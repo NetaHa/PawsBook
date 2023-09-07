@@ -5,7 +5,15 @@
     "dogName": "tomi",
     "email": "gal@gmail.com",
     "password": "$2b$10$VzmGnbLlrUCpQld3sgut.usCIgnsRik67tf6kv2z8cOk4HhlO9HLq",
-    "id": "aca4262c-7960-49ed-90f6-d9d3e37e5a3e"
+    "id": "aca4262c-7960-49ed-90f6-d9d3e37e5a3e",
+    "activityHistory": [
+      {
+        "event": "created",
+        "timestamp": "2023-09-05T09:53:33.059Z"
+      }
+    ],
+    "following": [],
+    "followers": []
   },
   {
     "userName": "admin",
@@ -13,7 +21,15 @@
     "dogName": "admin's dog",
     "email": "admin@gmail.com",
     "password": "$2b$10$xT5Tjp1SsUiRj45xNDWgLeQup3pb2hmfAmWxLGKiGzzbFKOgNyweu",
-    "id": "838177db-6b6a-4168-a805-d41d0010ec6a"
+    "id": "838177db-6b6a-4168-a805-d41d0010ec6a",
+    "activityHistory": [
+      {
+        "event": "created",
+        "timestamp": "2023-09-05T10:53:33.059Z"
+      }
+    ],
+    "following": [],
+    "followers": []
   },
   {
     "userName": "yael97",
@@ -21,7 +37,15 @@
     "dogName": "fredi",
     "email": "yael@gmail.com",
     "password": "$2b$10$OtKvbyfznr3/M1yKA5mOzuFsUc/GDNPSfYbsPc7vnRwlISH3fmzSO",
-    "id": "20967433-769f-4238-b06e-cbb51eafe742"
+    "id": "20967433-769f-4238-b06e-cbb51eafe742",
+    "activityHistory": [
+      {
+        "event": "created",
+        "timestamp": "2023-09-05T11:53:33.059Z"
+      }
+    ],
+    "following": [],
+    "followers": []
   },
   {
     "userName": "neta98",
@@ -29,7 +53,15 @@
     "dogName": "milo",
     "email": "neta@gmail.com",
     "password": "$2b$10$DRADuFeHgaDwc7AFhV0ii.9EiuNOs7cWwCyjDJ3ehM84kkrBfjHJy",
-    "id": "0aba3e0c-3716-481a-a727-18b2db57fa81"
+    "id": "0aba3e0c-3716-481a-a727-18b2db57fa81",
+    "activityHistory": [
+      {
+        "event": "created",
+        "timestamp": "2023-09-05T18:53:33.059Z"
+      }
+    ],
+    "following": [],
+    "followers": []
   },
   {
     "userName": "Guy98",
@@ -37,7 +69,15 @@
     "dogName": "Luna",
     "email": "guy@gmail.com",
     "password": "$2b$10$VWtPl9nAE4atLIKDfLA4a.hPcTIwJmbHzaR19m1H1rT841/umMXPy",
-    "id": "3771bab2-28f1-4fda-a762-b898d1d33292"
+    "id": "3771bab2-28f1-4fda-a762-b898d1d33292",
+    "activityHistory": [
+      {
+        "event": "created",
+        "timestamp": "2023-09-05T17:53:33.059Z"
+      }
+    ],
+    "following": [],
+    "followers": []
   },
   {
     "userName": "Tomer10",
@@ -51,7 +91,9 @@
         "event": "created",
         "timestamp": "2023-09-05T16:53:33.059Z"
       }
-    ]
+    ],
+    "following": [],
+    "followers": []
   },
   {
     "userName": "TOMI",

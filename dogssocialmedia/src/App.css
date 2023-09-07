@@ -36,3 +36,17 @@
     transform: rotate(360deg);
   }
 }
+/* Default styles (Light Mode) */
+body {
+  background-color: white;
+  color: black;
+  /* Add any other default styles or light mode styles here */
+}
+
+/* Dark Mode styles */
+body[data-theme='dark'] {
+  background-color: #242424;
+  color: white;
+  /* Add any other dark mode styles here */
+}
+

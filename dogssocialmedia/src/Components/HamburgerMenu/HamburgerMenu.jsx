@@ -18,6 +18,8 @@ const HamburgerMenu = () => {
                      <div className="menu-list">
                      <Link to="/FeedPage">Feed Page</Link>
                      <Link to="/FollowingUsersPage">Following Users Page</Link>
+                     <Link to="/DogsTipsPage">Tips</Link>
+                     <Link to="/DogParksPage">Parks</Link>
                      <Link to="/Logout">Logout</Link>
                  </div>
             )}

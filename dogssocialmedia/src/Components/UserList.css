@@ -1,0 +1,9 @@
+.user-entry {
+    display: flex;            
+    align-items: center;      
+    margin-bottom: 10px;      
+}
+
+.username {
+    margin-right: 10px;       
+}

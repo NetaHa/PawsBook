@@ -115,24 +115,6 @@
   {
     "id": 18,
     "userName": "neta98",
-    "content": "hey you",
-    "userId": "0aba3e0c-3716-481a-a727-18b2db57fa81",
-    "likes": [
-      "0aba3e0c-3716-481a-a727-18b2db57fa81"
-    ],
-    "time": "2023-09-05T10:21:47.503Z"
-  },
-  {
-    "id": 19,
-    "userName": "neta98",
-    "content": "yes ",
-    "userId": "0aba3e0c-3716-481a-a727-18b2db57fa81",
-    "likes": [],
-    "time": "2023-09-05T12:04:30.584Z"
-  },
-  {
-    "id": 18,
-    "userName": "neta98",
     "content": "hey !",
     "userId": "0aba3e0c-3716-481a-a727-18b2db57fa81",
     "likes": [],
@@ -161,7 +143,10 @@
     "userName": "neta98",
     "content": "i have the cutest dog ! :) ",
     "userId": "0aba3e0c-3716-481a-a727-18b2db57fa81",
-    "likes": [],
+    "likes": [
+      "0aba3e0c-3716-481a-a727-18b2db57fa81",
+      "3771bab2-28f1-4fda-a762-b898d1d33292"
+    ],
     "time": "2023-09-05T19:08:05.693Z"
   }
 ]

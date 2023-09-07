@@ -5,7 +5,9 @@ import NotFound from './Pages/LoginPage/Login'; // Optional 404 component
 import Feed from './Pages/FeedPage/Feed';
 import FollowingUsers from './Pages/FollowingUsersPage/FollowingUsers';
 import Logout from './Components/Logout';
-
+import DogsTips from './Pages/DogsTipsPage/DogsTips';
+import DogParks from './Pages/DogParksPage/DogParks';
+import './App.css'
 
 
 function App() {
@@ -18,6 +20,8 @@ function App() {
         <Route path="/FeedPage" element={<Feed />} />
         <Route path="/FollowingUsersPage" element={<FollowingUsers />} />
         <Route path="/Logout" element={<Logout />} />
+        <Route path="/DogsTipsPage" element={<DogsTips />} />
+        <Route path='/DogParksPage' element={<DogParks />} />
         <Route path="*" element={<NotFound />} /> {/* This is a catch-all route */}
       </Routes>
     </Router>

@@ -1,0 +1,45 @@
+.tips-container {
+    background-image: url("https://e0.pxfuel.com/wallpapers/619/537/desktop-wallpaper-teal-and-white-dog-paw-prints-puppy-bone-and-hearts-tile-pattern-paw-print-background-dog-paw-print-paw-print-thumbnail.jpg");
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background-color: #f7f7f7;
+  }
+  
+  .tips-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    max-width: 500px;
+  }
+  
+  .tip-item {
+    flex: 1 1 calc(33.333% - 20px);
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 10px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .tip-item img {
+    width: 100%;
+    border-radius: 10px;
+    /* object-fit:cover; */
+    height: 250px;
+    margin-bottom: 10px;
+  }
+  
+  @media screen and (max-width: 800px) {
+    .tip-item {
+      flex: 1 1 calc(50% - 20px);
+    }
+  }
+  
+  @media screen and (max-width: 500px) {
+    .tip-item {
+      flex: 1 1 100%;
+    }
+  }
+  

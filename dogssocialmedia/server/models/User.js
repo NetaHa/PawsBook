@@ -110,4 +110,5 @@ const writeJsonAsync = (path, data) => {
   }));
 }
 
-module.exports = { User };
+module.exports = { User, readJsonAsync };
+
