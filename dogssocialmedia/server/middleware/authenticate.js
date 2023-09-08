@@ -2,7 +2,12 @@ const jwt = require('jsonwebtoken');
 const { User } = require('../models/User.js'); 
 
 async function authenticate(req, res, next) {
-    const token = req.header('Authorization').replace('Bearer ', '');
+    const authHeader = req.header('Authorization');
+    if (!authHeader) {
+        return res.status(401).json({ error: 'Authorization header missing' });
+    }
+    const token = authHeader.replace('Bearer ', '');
+
     if (!token) {
         return res.status(401).send({ error: 'No token provided' });
     }

@@ -1,10 +1,25 @@
 import React, { useState } from 'react';
 import MainLayout from '../../layouts/MainLayout';
 import './FollowingUsers.css';
-import UserList from '../../Components/UserList'; // Adjust the path if they're not in the same directory
+import UserList from '../../Components/UserList';
 
-const FollowingUsersPage = ({ loggedInUserId }) => { 
+const FollowingUsersPage = () => { 
     const [searchTerm, setSearchTerm] = useState('');
+
+    const getToken = () => {
+        const name = 'authToken=';
+        const decodedCookie = decodeURIComponent(document.cookie);
+        const cookieArray = decodedCookie.split(';');
+        for (let i = 0; i < cookieArray.length; i++) {
+            let cookie = cookieArray[i].trim();
+            if (cookie.indexOf(name) === 0) {
+                return cookie.substring(name.length, cookie.length);
+            }
+        }
+        return "";
+    }
+
+    const token = getToken();
 
     return (
         <MainLayout>
@@ -15,7 +30,7 @@ const FollowingUsersPage = ({ loggedInUserId }) => {
                     value={searchTerm}
                     onChange={e => setSearchTerm(e.target.value)}
                 />
-                <UserList loggedInUserId={loggedInUserId} searchTerm={searchTerm} />
+                <UserList token={token} searchTerm={searchTerm} />
             </div>
         </MainLayout>
     );

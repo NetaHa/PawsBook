@@ -13,7 +13,9 @@
       }
     ],
     "following": [],
-    "followers": []
+    "followers": [
+      "0aba3e0c-3716-481a-a727-18b2db57fa81"
+    ]
   },
   {
     "userName": "admin",
@@ -60,7 +62,11 @@
         "timestamp": "2023-09-05T18:53:33.059Z"
       }
     ],
-    "following": [],
+    "following": [
+      "d8e31f8d-f247-493e-be0d-f41544938046",
+      "690b779b-57da-45f2-9128-78b16ec61f5f",
+      "aca4262c-7960-49ed-90f6-d9d3e37e5a3e"
+    ],
     "followers": []
   },
   {
@@ -110,5 +116,43 @@
     ],
     "following": [],
     "followers": []
+  },
+  {
+    "userName": "Hagai92",
+    "ownerName": "Hagai",
+    "dogName": "Fredi",
+    "email": "hagai@gmail.com",
+    "password": "$2b$10$YdjwKwz4sQQ1GvIFD/TfU.JAMXcDYPKi26jUs0x878ld9I0GIAtAe",
+    "profileImagePath": "uploads\\1694099012995-fredi.jpg",
+    "id": "690b779b-57da-45f2-9128-78b16ec61f5f",
+    "activityHistory": [
+      {
+        "event": "Registered",
+        "timestamp": "2023-09-07T15:03:33.087Z"
+      }
+    ],
+    "following": [],
+    "followers": [
+      "0aba3e0c-3716-481a-a727-18b2db57fa81"
+    ]
+  },
+  {
+    "userName": "Noa",
+    "ownerName": "noa",
+    "dogName": "noko",
+    "email": "noa@gmail.com",
+    "password": "$2b$10$9WyamiFPNmCZECGNDxVfw.jyEPKdGg9IXgxasZ/F9H7QJRbp6ZKYK",
+    "profileImagePath": "uploads\\1694099412735-Milo.jpg",
+    "id": "d8e31f8d-f247-493e-be0d-f41544938046",
+    "activityHistory": [
+      {
+        "event": "Registered",
+        "timestamp": "2023-09-07T15:10:12.867Z"
+      }
+    ],
+    "following": [],
+    "followers": [
+      "0aba3e0c-3716-481a-a727-18b2db57fa81"
+    ]
   }
 ]

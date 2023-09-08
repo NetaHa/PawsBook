@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import MainLayout from '../../layouts/MainLayout';
+import DogOfTheDay from '../../Components/DogOfTheDay/DogOfTheDay';
 import './Feed.css';
 //import { getToken } from '../../Components/tokenHelper';
 
@@ -128,11 +129,11 @@ const Feed = () => {
             setPosts(prevPosts => prevPosts.map(post => post.id === postId ? updatedPost : post));
         });
     };
-    console.log(posts);//debugging
 
     return (
         <MainLayout>
         <div className="feed-container">
+            <DogOfTheDay />
             <div className="new-post">
                 <textarea
                     value={postContent}

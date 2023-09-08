@@ -20,6 +20,13 @@ const Register = () => {
   const validatePassword = (password) => {
     return password.length >= 5 && password.length <= 15;
   };
+  //new for pic upload
+  const [selectedImage, setSelectedImage] = useState(null);
+
+  const handleImageChange = (e) => {
+    setSelectedImage(e.target.files[0]);
+  };
+
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -36,20 +43,22 @@ const Register = () => {
 
     setErrorMsg('');
 
-    const formData = {
-      userName: userName,
-      ownerName: ownerName,
-      dogName: dogName,
-      email: email,
-      password: password
-    };
+    const formData = new FormData();
+    formData.append('userName', userName);
+    formData.append('ownerName', ownerName);
+    formData.append('dogName', dogName);
+    formData.append('email', email);
+    formData.append('password', password);
+    formData.append('profileImage', selectedImage); // Add the selected image
+
     
     fetch('http://localhost:5000/api/users/register', {  
       method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(formData)
+      // headers: {
+      //   'Content-Type': 'application/json'
+      // },
+      // body: JSON.stringify(formData)
+      body : formData
     })
       .then(response => {
         if (response.ok) {
@@ -97,6 +106,14 @@ return (
           placeholder="Enter dog's name"
           value={dogName}
           onChange={(e) => setDogName(e.target.value)}
+        />
+      </label>
+      <label>
+        Profile Image:
+        <input
+        type="file"
+        accept="image/*" // To accept only image files
+        onChange={(e) => handleImageChange(e)}
         />
       </label>
       <label>

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './UserList.css';
 
-const UserList = ({ loggedInUserId, searchTerm }) => {
+const UserList = ({ token, searchTerm }) => {
     const [users, setUsers] = useState([]);
     const [following, setFollowing] = useState([]);
 
@@ -14,37 +14,47 @@ const UserList = ({ loggedInUserId, searchTerm }) => {
                 return response.json();
             })
             .then(data => {
-                // Exclude the logged-in user
                 const filteredUsers = data
-                    .filter(user => user.id !== loggedInUserId)
-                    .filter(user => user.userName.toLowerCase().startsWith(searchTerm.toLowerCase()))
+                    .filter(user => user.userName.toLowerCase().startsWith(searchTerm.toLowerCase()));
     
                 setUsers(filteredUsers);
             })
             .catch(error => console.error('Error fetching users:', error));
-    }, [loggedInUserId, searchTerm]);
+    }, [searchTerm]);   
+
+    // Fetch the currently logged-in user's following list
+    useEffect(() => {
+        fetch('http://localhost:5000/api/users/currentUser', {
+            headers: {
+                'Authorization': `Bearer ${token}`
+            }
+        })
+        .then(response => response.json())
+        .then(data => {
+            setFollowing(data.following);
+        })
+        .catch(error => console.error('Error fetching logged-in user data:', error));
+    }, [token]);
     
-    console.log('loggedInUserId:', loggedInUserId); // for testing 
     const handleFollow = (userId) => {
         fetch(`http://localhost:5000/api/users/follow/${userId}`, {
             method: 'POST',
             headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({ followerId: loggedInUserId })
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${token}`
+            }
         })
         .then(() => setFollowing([...following, userId]))
         .catch(error => console.error('Error following user:', error));
     };
-    
 
     const handleUnfollow = (userId) => {
         fetch(`http://localhost:5000/api/users/unfollow/${userId}`, {
             method: 'POST',
             headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({ followerId: loggedInUserId })
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${token}`
+            }
         })
         .then(() => setFollowing(following.filter(id => id !== userId)))
         .catch(error => console.error('Error unfollowing user:', error));

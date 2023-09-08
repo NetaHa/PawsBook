@@ -17,7 +17,7 @@
     height: 100px;
     padding: 10px;
     resize: none;
-    border: 1px solid #ddd; /* added for better visual clarity */
+    border: 1px solid #626262; /* added for better visual clarity */
     border-radius: 5px; /* rounded corners */
     font-size: 16px; /* readability improvement */
     margin-bottom: 10px; /* space between textarea and post button */
@@ -45,7 +45,7 @@
 }
 
 .post {
-    border: 1px solid #e0e0e0;
+    border: 1px solid #626262;
     padding: 10px;
     margin-bottom: 10px;
     border-radius: 5px; /* consistent rounded corners */
@@ -66,7 +66,7 @@
     margin-right: 10px;
     padding: 5px 10px;
     border: none;
-    background-color: #eee;
+    background-color: #1b59af;
     cursor: pointer;
     transition: background-color 0.3s ease;
     border-radius: 5px; /* consistent rounded corners */
