@@ -13,40 +13,6 @@
       }
     ],
     "following": [],
-    "followers": [
-      "0aba3e0c-3716-481a-a727-18b2db57fa81"
-    ]
-  },
-  {
-    "userName": "admin",
-    "ownerName": "admin",
-    "dogName": "admin's dog",
-    "email": "admin@gmail.com",
-    "password": "$2b$10$xT5Tjp1SsUiRj45xNDWgLeQup3pb2hmfAmWxLGKiGzzbFKOgNyweu",
-    "id": "838177db-6b6a-4168-a805-d41d0010ec6a",
-    "activityHistory": [
-      {
-        "event": "created",
-        "timestamp": "2023-09-05T10:53:33.059Z"
-      }
-    ],
-    "following": [],
-    "followers": []
-  },
-  {
-    "userName": "yael97",
-    "ownerName": "yael",
-    "dogName": "fredi",
-    "email": "yael@gmail.com",
-    "password": "$2b$10$OtKvbyfznr3/M1yKA5mOzuFsUc/GDNPSfYbsPc7vnRwlISH3fmzSO",
-    "id": "20967433-769f-4238-b06e-cbb51eafe742",
-    "activityHistory": [
-      {
-        "event": "created",
-        "timestamp": "2023-09-05T11:53:33.059Z"
-      }
-    ],
-    "following": [],
     "followers": []
   },
   {
@@ -60,12 +26,22 @@
       {
         "event": "created",
         "timestamp": "2023-09-05T18:53:33.059Z"
+      },
+      {
+        "type": "login",
+        "timestamp": "2023-09-09T09:37:53.303Z"
+      },
+      {
+        "type": "login",
+        "timestamp": "2023-09-09T11:06:24.491Z"
+      },
+      {
+        "type": "login",
+        "timestamp": "2023-09-09T14:08:35.720Z"
       }
     ],
     "following": [
-      "d8e31f8d-f247-493e-be0d-f41544938046",
-      "690b779b-57da-45f2-9128-78b16ec61f5f",
-      "aca4262c-7960-49ed-90f6-d9d3e37e5a3e"
+      "d8e31f8d-f247-493e-be0d-f41544938046"
     ],
     "followers": []
   },
@@ -132,9 +108,7 @@
       }
     ],
     "following": [],
-    "followers": [
-      "0aba3e0c-3716-481a-a727-18b2db57fa81"
-    ]
+    "followers": []
   },
   {
     "userName": "Noa",
@@ -153,6 +127,86 @@
     "following": [],
     "followers": [
       "0aba3e0c-3716-481a-a727-18b2db57fa81"
+    ]
+  },
+  {
+    "userName": "Kimi",
+    "ownerName": "Kim",
+    "dogName": "Toy",
+    "email": "kim@gmail.com",
+    "password": "$2b$10$rXVav/bMQ.3hJFFdbcBukuRrtMTMaczFAeDRW4lEu5rruIe.x7Biy",
+    "profileImagePath": "uploads\\1694176361433-Toy.jpg",
+    "id": "485b5da0-b744-42a5-8927-d7c5db4242d5",
+    "activityHistory": [
+      {}
+    ],
+    "following": [],
+    "followers": []
+  },
+  {
+    "userName": "admin",
+    "ownerName": "admin",
+    "dogName": "admin's dog",
+    "email": "admin@gmail.com",
+    "password": "$2b$10$cflSrx/rd3tzEMBtBT1KX.P9xZnIDYkGZLmmT0HZ8UYCLBTPtZLe2",
+    "profileImagePath": "uploads\\1694179564548-admins dog.jpg",
+    "id": "63bdd953-7acf-4016-b3da-063644a33aab",
+    "following": [],
+    "followers": [],
+    "activityHistory": [
+      {
+        "type": "login",
+        "timestamp": "2023-09-09T09:27:17.976Z"
+      },
+      {
+        "type": "posted",
+        "timestamp": "2023-09-09T09:27:41.088Z"
+      },
+      {
+        "type": "login",
+        "timestamp": "2023-09-09T09:38:09.472Z"
+      },
+      {
+        "type": "login",
+        "timestamp": "2023-09-09T10:07:50.508Z"
+      },
+      {
+        "type": "login",
+        "timestamp": "2023-09-09T11:06:45.941Z"
+      },
+      {
+        "type": "login",
+        "timestamp": "2023-09-09T11:12:58.546Z"
+      },
+      {
+        "type": "login",
+        "timestamp": "2023-09-09T12:21:03.043Z"
+      },
+      {
+        "type": "login",
+        "timestamp": "2023-09-09T12:49:11.775Z"
+      }
+    ]
+  },
+  {
+    "userName": "Yaeli",
+    "ownerName": "Yael",
+    "dogName": "Alfredo",
+    "email": "yael12@gmail.com",
+    "password": "$2b$10$OV98SbQoXZV4yEKlkEjyG.kWVED/yVogciFm2hSkAvYotZVpEB3FO",
+    "profileImagePath": "uploads\\1694241405596-Alferdo.jpg",
+    "id": "b73fceb9-9a00-4ae3-a24c-36bb34921567",
+    "following": [],
+    "followers": [],
+    "activityHistory": [
+      {
+        "type": "posted",
+        "timestamp": "2023-09-09T06:38:06.018Z"
+      },
+      {
+        "type": "login",
+        "timestamp": "2023-09-09T12:48:31.108Z"
+      }
     ]
   }
 ]

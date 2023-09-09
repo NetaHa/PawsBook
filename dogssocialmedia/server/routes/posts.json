@@ -130,24 +130,23 @@
   },
   {
     "id": 20,
-    "userName": "TOMI",
-    "content": "hello im tomi! ",
-    "userId": "fe158fe1-8299-448a-8eb3-1a994f7cd7db",
+    "userName": "Yaeli",
+    "content": "The new garden in friendly Borochov is the best ! ",
+    "userId": "b73fceb9-9a00-4ae3-a24c-36bb34921567",
     "likes": [
-      "fe158fe1-8299-448a-8eb3-1a994f7cd7db"
+      "63bdd953-7acf-4016-b3da-063644a33aab",
+      "0aba3e0c-3716-481a-a727-18b2db57fa81"
     ],
-    "time": "2023-09-05T18:28:00.579Z"
+    "time": "2023-09-09T06:38:06.016Z"
   },
   {
     "id": 21,
-    "userName": "neta98",
-    "content": "i have the cutest dog ! :) ",
-    "userId": "0aba3e0c-3716-481a-a727-18b2db57fa81",
+    "userName": "admin",
+    "content": "im the admin.\n",
+    "userId": "63bdd953-7acf-4016-b3da-063644a33aab",
     "likes": [
-      "0aba3e0c-3716-481a-a727-18b2db57fa81",
-      "3771bab2-28f1-4fda-a762-b898d1d33292",
-      "d8e31f8d-f247-493e-be0d-f41544938046"
+      "0aba3e0c-3716-481a-a727-18b2db57fa81"
     ],
-    "time": "2023-09-05T19:08:05.693Z"
+    "time": "2023-09-09T09:27:41.085Z"
   }
 ]

@@ -7,6 +7,7 @@
 }
 
 .new-post {
+    text-align: left;
     display: flex; /* added to align textarea and button in the same row */
     flex-direction: column; /* changed to column to stack textarea above button */
     margin-bottom: 20px;
@@ -52,6 +53,7 @@
 }
 
 .post p {
+    text-align: left;
     margin-bottom: 10px;
 }
 

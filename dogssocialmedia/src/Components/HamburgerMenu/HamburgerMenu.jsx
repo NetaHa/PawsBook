@@ -4,6 +4,7 @@ import './HamburgerMenu.css';
 
 const HamburgerMenu = () => {
     const [isOpen, setIsOpen] = useState(false);
+    const isAdmin = localStorage.getItem('isAdmin') === 'true';
 
     return (
         <div className="hamburger-menu">
@@ -20,8 +21,9 @@ const HamburgerMenu = () => {
                      <Link to="/FollowingUsersPage">Following Users Page</Link>
                      <Link to="/DogsTipsPage">Tips</Link>
                      <Link to="/DogParksPage">Parks</Link>
+                     {isAdmin && <Link to="/AdminPage">Admin</Link>}
                      <Link to="/Logout">Logout</Link>
-                 </div>
+                    </div>
             )}
         </div>
     );

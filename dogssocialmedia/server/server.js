@@ -54,28 +54,11 @@ app.post('/api/users/register', upload.single('profileImage'), async (req, res) 
     }
 
     res.json({ message: 'User registered successfully' });
+    await User.updateActivity(user.id, "registered");
     } catch (error) {
     console.error('Error registering user:', error);
     res.status(500).json({ message: 'Internal Server Error' });
     }
-});
-
-// Login route
-app.post('/api/users/login', async (req, res) => {
-    const { email, password } = req.body;
-    const user = await User.findOne({ email });
-
-    if (!user) {
-        return res.status(400).json({ error: 'User not found' });
-    }
-
-    const isValidPassword = await User.validatePassword(password, user.password);
-    if (!isValidPassword) {
-        return res.status(400).json({ error: 'Invalid password' });
-    }
-
-    const token = User.generateToken(user);
-    res.json({ token });
 });
 
 app.listen(5000, () => {

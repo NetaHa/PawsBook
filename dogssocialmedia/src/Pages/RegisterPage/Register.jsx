@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom'; // Import the useNavigate hook
+import { useNavigate, Link } from 'react-router-dom';
 import './Register.css';
 
 const Register = () => {
@@ -135,6 +135,9 @@ return (
         />
       </label>
       <button type="submit">Register</button>
+      <p>
+        Already have an account? <Link to="/login">Login here</Link>
+      </p>
     </form>
   </div>
 );

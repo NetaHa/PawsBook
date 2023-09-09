@@ -9,7 +9,7 @@ const Login = () => {
   const [errorMsg, setErrorMsg] = useState('');
 
   const navigate = useNavigate();
-
+  
   const handleSubmit = (e) => {
     e.preventDefault();
 
@@ -33,6 +33,11 @@ const Login = () => {
       .then(data => {
         // Assuming your response contains a token
         const { token } = data;
+        if (data.isAdmin) {
+          localStorage.setItem('isAdmin', true);
+        } else {
+          localStorage.setItem('isAdmin', false);
+        }
 
         // Set cookies based on "remember me" checkbox
         const expirationTime = rememberMe ? 10 * 24 * 60 * 60 * 1000 : 30 * 60 * 1000;

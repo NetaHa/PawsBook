@@ -5,6 +5,7 @@ const jwt = require('jsonwebtoken');
 const { v4: uuidv4 } = require('uuid');  // Import the UUID function
 const saltRounds = 10;
 const jwtSecret = process.env.JWT_SECRET;
+activityHistory = [];
 
 class User {
   static dbPath = path.join(__dirname, "data", "users.json");
@@ -29,10 +30,10 @@ class User {
     // Hash the password before saving
     user.password = await bcrypt.hash(user.password, saltRounds);
 
-    user.activityHistory = [{ 
-      event: 'Registered',  
-      timestamp: new Date().toISOString()
-    }];
+    // user.activityHistory = [{
+    //   event: 'Registered',  
+    //   timestamp: new Date().toISOString()
+    // }];
 
     user.following = [];
     user.followers = [];
@@ -73,7 +74,23 @@ static async update(updatedUser) {
       users[index] = updatedUser;
       await writeJsonAsync(User.dbPath, users);
   }
-}// last function i added 21:18
+}
+
+static async updateActivity(userId, activityType) {
+  const users = await readJsonAsync(User.dbPath);
+  const user = users.find(u => u.id === userId);
+  if (user) {
+      if (!user.activityHistory) user.activityHistory = [];
+
+      const activity = {
+          type: activityType,
+          timestamp: new Date().toISOString()
+      };
+
+      user.activityHistory.push(activity);
+      await writeJsonAsync(User.dbPath, users);
+  }
+}
 
   static generateToken(user) {
     const payload = {

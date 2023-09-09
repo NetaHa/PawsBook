@@ -5,7 +5,7 @@ const fs = require('fs');
 const path = require('path');
 const POSTS_FILE_PATH = path.join(__dirname, '..', 'models', 'data', 'users.json');
 const authenticate = require('../middleware/authenticate.js');
-
+const bcrypt = require('bcrypt');
 
 router.get('/api/randomDogImage', (req, res) => {
     // Read the users.json file
@@ -30,23 +30,28 @@ router.get('/api/randomDogImage', (req, res) => {
     });
 });
 
-// router.post('/api/users/login', async (req, res) => {
-//     const { email, password } = req.body;
+router.post('/api/users/login', async (req, res) => {
+  const { email, password } = req.body;
 
-//     // Fetch the user from the database
-//     const user = await User.findOne({ email });
+  const user = await User.findOne({ email });
 
-//     if(user) {
-//         const isValidPassword = await User.validatePassword(password, user.password);
-        
-//         if(isValidPassword) {
-//             const token = User.generateToken(user);
-//             return res.json({ token });
-//         }
-//     }
-    
-//     return res.status(401).json({ error: 'Invalid credentials' });
-// });
+  if (!user) {
+      return res.status(400).json({ error: 'User not found' });
+  }
+
+  const isValidPassword = await bcrypt.compare(password, user.password);  // Using bcrypt here too
+  if (!isValidPassword) {
+      return res.status(400).json({ error: 'Invalid password' });
+  }
+
+  const token = User.generateToken(user);
+  await User.updateActivity(user.id, "login");
+  
+  const isAdmin = email === "admin@gmail.com";  // Check if the user is an admin based on email
+  console.log("Server is sending isAdmin as:", isAdmin); 
+
+  res.json({ token, isAdmin });
+});
 
 // GET Endpoint to fetch all users
 router.get('/api/users', async (req, res) => {
@@ -59,6 +64,22 @@ router.get('/api/users', async (req, res) => {
     }
 
     const fs = require('fs');  
+});
+
+router.delete('/api/users/:id', (req, res) => {
+    try {
+        const userId = req.params.id;
+        const users = JSON.parse(fs.readFileSync(POSTS_FILE_PATH, 'utf8'));
+
+        const updatedUsers = users.filter(user => String(user.id) !== String(userId));
+        
+        fs.writeFileSync(POSTS_FILE_PATH, JSON.stringify(updatedUsers, null, 4));
+
+        res.json({ success: true, message: 'User deleted' });
+    } catch (err) {
+        console.error('Error deleting user:', err);
+        res.status(500).send('Internal server error while deleting user');
+    }
 });
 
 module.exports = router;

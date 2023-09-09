@@ -2,41 +2,58 @@ import React, { useState, useEffect } from 'react';
 import './DogOfTheDay.css';
 
 const DogOfTheDay = () => {
+    const [isFeatureEnabled, setIsFeatureEnabled] = useState(JSON.parse(localStorage.getItem('features'))?.DogOfTheDay || false);
     const [dogImage, setDogImage] = useState('');
 
     useEffect(() => {
-        console.log('Checking last updated timestamp...');
-        const lastUpdated = localStorage.getItem('dogOfDayTimestamp');
-        const now = new Date().getTime();
-        console.log('Last updated:', lastUpdated);
+        const handleFeatureToggle = (e) => {
+            const { featureName, enabled } = e.detail;
+            if (featureName === 'DogOfTheDay') {
+                setIsFeatureEnabled(enabled);
+            }
+        };
 
-        if (!lastUpdated || now - lastUpdated > 24 * 60 * 60 * 1000) {
-            console.log('Fetching new image path from API...');
-            fetch('http://localhost:5000/api/randomDogImage')
-                .then(res => {
-                    if (!res.ok) {
-                        throw new Error('Network response was not ok');
-                    }
-                    return res.json();
-                })
-                .then(data => {
-                    console.log('Image Path from API:', data.imagePath);
-                    if (data && data.imagePath) {
-                        setDogImage(data.imagePath);
-                        localStorage.setItem('dogOfDayTimestamp', now.toString());
-                        localStorage.setItem('dogOfDayImage', data.imagePath);
-                    }
-                })
-                .catch(error => {
-                    console.error('Fetch error:', error);
-                });
-        } else {
-            // If there's no need to fetch a new image, use the cached one
-            const cachedImagePath = localStorage.getItem('dogOfDayImage');
-            setDogImage(cachedImagePath);
+        window.addEventListener('featureToggled', handleFeatureToggle);
+
+        return () => {
+            window.removeEventListener('featureToggled', handleFeatureToggle);
+        };
+    }, []);
+
+    useEffect(() => {
+        if (isFeatureEnabled) {
+            const lastUpdated = localStorage.getItem('dogOfDayTimestamp');
+            const now = new Date().getTime();
+
+            if (!lastUpdated || now - lastUpdated > 24 * 60 * 60 * 1000) {
+                fetch('http://localhost:5000/api/randomDogImage')
+                    .then(res => {
+                        if (!res.ok) {
+                            throw new Error('Network response was not ok');
+                        }
+                        return res.json();
+                    })
+                    .then(data => {
+                        if (data && data.imagePath) {
+                            setDogImage(data.imagePath);
+                            localStorage.setItem('dogOfDayTimestamp', now.toString());
+                            localStorage.setItem('dogOfDayImage', data.imagePath);
+                        }
+                    })
+                    .catch(error => {
+                        console.error('Fetch error:', error);
+                    });
+            } else {
+                // If there's no need to fetch a new image, use the cached one
+                const cachedImagePath = localStorage.getItem('dogOfDayImage');
+                setDogImage(cachedImagePath);
+            }
         }
+    }, [isFeatureEnabled]); 
 
-    }, []);  // eslint-disable-next-line react-hooks/exhaustive-deps
+    if (!isFeatureEnabled) {
+        return null;  // Don't render the component if the feature is disabled.
+    }
 
     return (
         <div className="dog-of-the-day-container">

@@ -69,6 +69,7 @@ router.post('/api/posts', authenticate, async (req, res) => {
 
     posts.push(newPost);
     savePostsToFile(posts);  // Save the updated posts array to file.
+    await User.updateActivity(userId, "posted");
     res.json(newPost);
 });
 
