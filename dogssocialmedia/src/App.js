@@ -7,6 +7,7 @@ import FollowingUsers from './Pages/FollowingUsersPage/FollowingUsers';
 import Logout from './Components/Logout';
 import DogsTips from './Pages/DogsTipsPage/DogsTips';
 import DogParks from './Pages/DogParksPage/DogParks';
+import ReadMe from './Pages/ReadMe/ReadMe';
 import Admin from './Pages/AdminPage/Admin';
 import './App.css'
 
@@ -23,6 +24,7 @@ function App() {
         <Route path="/Logout" element={<Logout />} />
         <Route path="/DogsTipsPage" element={<DogsTips />} />
         <Route path='/DogParksPage' element={<DogParks />} />
+        <Route path='/ReadMe' element={<ReadMe />} />
         <Route path='/AdminPage' element={<Admin />} />        
         <Route path="*" element={<NotFound />} /> {/* This is a catch-all route */}
       </Routes>

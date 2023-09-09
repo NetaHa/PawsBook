@@ -4,10 +4,8 @@ const { User } = require('../models/User.js');
 const { Post } = require('../models/Post.js'); 
 const authenticate = require('../middleware/authenticate.js');
 const fs = require('fs');
-
 const path = require('path');
-
-const POSTS_FILE_PATH = path.join(__dirname, 'posts.json');
+const POSTS_FILE_PATH = path.join(__dirname, '..', 'models', 'data', 'posts.json');
 
 const readPostsFromFile = () => {
     try {
@@ -69,7 +67,6 @@ router.post('/api/posts', authenticate, async (req, res) => {
 
     posts.push(newPost);
     savePostsToFile(posts);  // Save the updated posts array to file.
-    await User.updateActivity(userId, "posted");
     res.json(newPost);
 });
 

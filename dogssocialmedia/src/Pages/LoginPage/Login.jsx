@@ -56,6 +56,7 @@ const Login = () => {
   return (
     <div className="login-container">
       {errorMsg && <p className="error-message">{errorMsg}</p>} 
+      <h1 className="welcome-header">Welcome to PawsBook</h1>
       <form onSubmit={handleSubmit}>
         <label>
           Email:

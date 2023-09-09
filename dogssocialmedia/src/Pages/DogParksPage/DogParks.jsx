@@ -26,7 +26,7 @@ const DogParksPage = () => {
   return (
     <MainLayout>
       <div className="parks-container">
-        <h1>Choose an Erea in Israel</h1>
+        <h1>Choose an Area in Israel</h1>
 
         <div className="area-selector">
           <button onClick={() => setSelectedArea('north')}>North</button>

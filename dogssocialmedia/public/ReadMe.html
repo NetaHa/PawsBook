@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ReadMe</title>
+    <link rel="stylesheet" href="ReadMe.css">
+</head>
+<body>
+    <div class="content-container">
+    <h1><span class="network-title">Social network name:</span> PawsBook</h1>
+
+    <p><span class="head-title">The additional pages we added:</span></p>
+    <p><span class="title">Dog's Owner Tips:</span> The page includes five dog's owner tips.</p>
+    <p>Instructions: This page is for members only. You have to log-in in order to have access.</p>
+    <p><span class="title">Dogs Parks:</span>Dog Parks: Options for dog parks in different areas in Israel.</p>
+    <p>Instructions: This page is for members only. You have to log-in in order to have access.</p>
+
+    <p><span class="head-title">The additional features we added:</span></p>
+    <p><span class="title">Dark Mode:</span>A feature that allows the page to switch between dark and light modes by clicking on moon/sun icons.</p>
+    <p><span class="title">Dog of the day:</span> A feature where a picture is randomly selected from all the photos uploaded by users during registration and is displayed on the Feed Page. The picture changes every 24 hours.</p>
+    <p><span class="head-title">What was hard to do:</span> The entire project was a significant challenge as I had never worked with Node.js, Express, and JavaScript before. In addition, never dealt with building a whole project from scratch. The most challenging parts for me were at first to structure the project, then managing the routes and handling data on the local disk with JSON files. Afterwards, building the Feed Page and fetching all user's posts and assigning for each post his username and displaying it on screen. Additionally, managing the "Following Users" Page and the Admin Page posed challenges, but after overcoming all the obstacles and errors, I was really proud of myself and I really liked that in web-internet applications you can see right away when you make progress and that gave me the confidence and power to push back when I was frustrated.</p>
+    <p><span class="title">My partner is Lee Jaichenco - 315467977.</span></p>
+    <p>I was mainly in charge for the server routes and the web architecture, saving the data in json files, handeling the Admin page and doing the tests file.
+        Lee was in charge of the website design, including the jsx pages structures, css. In addition, she handeled the static pages.
+        Although each had her own responsibilities, we helped each other when needed.
+    </p>
+
+    <p><span class="head-title">Routes:</span></p>
+    <ul>
+        <li>Login.jsx - Login form.</li>
+        <li>Register.jsx - Register form.</li>
+        <li>Feed.jsx - User logged in can post a new post there and see a list of all other users' posts.</li>
+        <li>FollowingUsers.jsx- User logged in can search for other users by prefix-search and can follow/unfollow other users who registered for the web.</li>
+        <li>DogsTips.jsx- This page includes five tips for dog owners.</li>
+        <li>DogsParks.jsx- This page lists dog park options in different areas of Israel.</li>
+        <li>Admin.jsx- This page contains relevant admin operations: remove user, view user activity, and enable/disable features.</li>
+        <li>MainLayout.jsx- Wrapping the web with the features we wanted to appear on all pages.</li>
+        <li>UserList.jsx- Fetching the users, displaying them to the logged in user and having the option to follow/unfollow other users.</li>
+        <li>Logout.jsx- Delete the token of the current logged in user, and redirect to the login page.</li>
+        <li>HamburgerMenu.jsx- Helping to navigate through the app by displaying all the pages a user can visit.</li>
+        <li>DogOfTheDay.jsx- A feature of a picture box that gets the picture's data from the users.json file.</li>
+        <li>DarkMode.jsx- A feature where a picture is randomly selected from all the photos uploaded by users during registration and is displayed on the Feed Page. The picture changes every 24 hours.</li>
+    </ul>
+    </div>
+</body>
+</html>

@@ -1,0 +1,61 @@
+/* General styles */
+body {
+  font-family: Arial, sans-serif;
+  font-size: 18px;
+  font-weight: 300;
+  line-height: 1.6;
+  margin: 20px;
+  background-image: url("https://e0.pxfuel.com/wallpapers/619/537/desktop-wallpaper-teal-and-white-dog-paw-prints-puppy-bone-and-hearts-tile-pattern-paw-print-background-dog-paw-print-paw-print-thumbnail.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  padding: 20px;
+  color: #333333;
+}
+
+.content-container {
+  background-color: rgba(255, 255, 255, 0.8); /* white with 80% opacity */
+  padding: 20px;
+  border-radius: 10px; /* Optional: to give rounded corners */
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Optional: to give a slight shadow effect */
+}
+
+p {
+  margin-bottom: 20px;
+}
+  
+ul {
+  list-style-type: circle;
+  margin-left: 40px;
+  margin-bottom: 20px;
+}
+  
+li {
+  margin-bottom: 10px;
+}
+
+.title {
+  font-size: 18px;
+  font-weight: bold;
+  display: inline-block;
+  margin-right: 5px;  
+  color: #007BFF;
+}
+
+.head-title {
+  font-size: 22px;
+  font-weight: bold;
+  display: inline-block;
+  margin-right: 5px;  
+  color: #007BFF;
+}
+
+.network-title {
+  font-size: 36px;
+  font-weight: bold;
+  display: inline-block;
+  margin-right: 5px;  
+  color: #007BFF;
+}
+
+
