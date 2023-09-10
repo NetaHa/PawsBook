@@ -1,3 +1,6 @@
+//run npm start
+//on another terminal 1.cd server 2.npm run dev
+//to run tests "node test.js"
 const baseURL = 'http://localhost:5000/api/users';  
 
 async function testLoginWithCorrectCredentials() {
