@@ -1,27 +1,21 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const cors = require('cors');  
+const multer = require('multer');
+const path = require('path');
 const { User } = require('./models/User');
 require('dotenv').config();
+
+// Routes
 const userRoutes = require('./routes/userRoutes');
 const postRoutes = require('./routes/postRoutes');
 const followingRoutes = require('./routes/followingRoutes.js');
 
 const app = express();
-const path = require('path');
 
 app.use(cors());
 app.use(bodyParser.json());
-app.use(userRoutes);
-app.use(postRoutes);
-app.use(followingRoutes);
 app.use('/uploads', express.static('uploads'));
-
-app.use((err, req, res, next) => { 
-  res.status(500).send('Something broke!');
-});
-
-const multer = require('multer');
 
 const storage = multer.diskStorage({
   destination: function(req, file, cb) {
@@ -34,33 +28,42 @@ const storage = multer.diskStorage({
 
 const upload = multer({ storage: storage });
 
-// Registration route
+app.use(userRoutes);
+app.use(postRoutes);
+app.use(followingRoutes);
+
 app.post('/api/users/register', upload.single('profileImage'), async (req, res) => {
   try {
-    const userData = req.body;
-
-    if (req.file) {
-      userData.profileImagePath = req.file.path;
+    const { email, password, userName } = req.body;
+    if (!email || !password || !userName) {
+      return res.status(400).json({ message: 'Missing required fields' });
     }
-    // Check if user already exists before creating
-    const existingUser = await User.findOne({ email: userData.email });
+    
+    const existingUser = await User.findOne({ email });
     if (existingUser) {
       return res.status(400).json({ message: 'Email already registered' });
     }
 
-    await User.create(userData);
-    if (!userData.email || !userData.password || !userData.userName) {
-      return res.status(400).json({ message: 'Missing required fields' });
+    const userData = req.body;
+    if (req.file) {
+      userData.profileImagePath = req.file.path;
     }
 
+    await User.create(userData);
     res.json({ message: 'User registered successfully' });
     await User.updateActivity(user.id, "registered");
-    } catch (error) {
+  } catch (error) {
     console.error('Error registering user:', error);
     res.status(500).json({ message: 'Internal Server Error' });
-    }
+  }
 });
 
-app.listen(5000, () => {
-  console.log('Server started on http://localhost:5000');
+app.use((err, req, res, next) => { 
+  console.error(err.stack);
+  res.status(500).send('Something broke!');
+});
+
+const PORT = process.env.PORT || 5000;
+app.listen(PORT, () => {
+  console.log(`Server started on http://localhost:${PORT}`);
 });

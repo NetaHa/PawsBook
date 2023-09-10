@@ -22,7 +22,6 @@ const UserList = ({ token, searchTerm }) => {
             .catch(error => console.error('Error fetching users:', error));
     }, [searchTerm]);   
 
-    // Fetch the currently logged-in user's following list
     useEffect(() => {
         fetch('http://localhost:5000/api/users/currentUser', {
             headers: {

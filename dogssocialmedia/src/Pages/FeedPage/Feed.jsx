@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import MainLayout from '../../layouts/MainLayout';
 import DogOfTheDay from '../../Components/DogOfTheDay/DogOfTheDay';
 import './Feed.css';
-//import { getToken } from '../../Components/tokenHelper';
 
 const Feed = () => {
     const [postContent, setPostContent] = useState('');
@@ -71,19 +70,17 @@ const Feed = () => {
     };
 
     const handleLike = (postId) => {
-        // Optimistic Update: Update UI immediately
         setPosts(prevPosts => prevPosts.map(post => {
             if (post.id === postId) {
                 return {
                     ...post,
-                    likesCount: post.likesCount + 1, // Increase likes count
-                    isLikedByCurrentUser: true      // Set post as liked by user
+                    likesCount: post.likesCount + 1, 
+                    isLikedByCurrentUser: true      
                 };
             }
             return post;
         }));
     
-        // Send the like request to the backend
         fetch(`http://localhost:5000/api/posts/${postId}/like`, {
             method: 'PATCH',
             headers: {
@@ -102,13 +99,12 @@ const Feed = () => {
         .catch(error => {
             console.error("There was an error:", error);
     
-            // Revert the optimistic update if there's an error
             setPosts(prevPosts => prevPosts.map(post => {
                 if (post.id === postId) {
                     return {
                         ...post,
-                        likesCount: post.likesCount - 1, // Decrease likes count
-                        isLikedByCurrentUser: false     // Set post as not liked by user
+                        likesCount: post.likesCount - 1, 
+                        isLikedByCurrentUser: false    
                     };
                 }
                 return post;

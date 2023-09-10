@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react"; // <-- Imported useState
+import React, { useState, useEffect } from "react"; 
 import { ReactComponent as Sun } from "./Sun.svg";
 import { ReactComponent as Moon } from "./Moon.svg";
 import "./DarkMode.css";
@@ -35,7 +35,7 @@ const DarkMode = () => {
     };
 
     if (!isFeatureEnabled) {
-        return null; // Do not render if the feature is disabled
+        return null;
     }
 
     return (

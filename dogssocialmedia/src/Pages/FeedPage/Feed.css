@@ -3,13 +3,13 @@
     max-width: 800px;
     margin: 0 auto;
     padding: 20px;
-    box-shadow: 0px 0px 5px rgba(0,0,0,0.1); /* added a light shadow for better separation */
+    box-shadow: 0px 0px 5px rgba(0,0,0,0.1); 
 }
 
 .new-post {
     text-align: left;
-    display: flex; /* added to align textarea and button in the same row */
-    flex-direction: column; /* changed to column to stack textarea above button */
+    display: flex; 
+    flex-direction: column;
     margin-bottom: 20px;
 }
 
@@ -18,14 +18,14 @@
     height: 100px;
     padding: 10px;
     resize: none;
-    border: 1px solid #626262; /* added for better visual clarity */
-    border-radius: 5px; /* rounded corners */
-    font-size: 16px; /* readability improvement */
-    margin-bottom: 10px; /* space between textarea and post button */
+    border: 1px solid #626262; 
+    border-radius: 5px; 
+    font-size: 16px; 
+    margin-bottom: 10px; 
 }
 
 .new-post button {
-    align-self: flex-end; /* align button to the end */
+    align-self: flex-end; 
     padding: 8px 16px;
     background-color: #007bff;
     color: white;
@@ -42,14 +42,14 @@
 .posts-list {
     display: flex;
     flex-direction: column;
-    margin-top: 20px; /* space between post input and list of posts */
+    margin-top: 20px; 
 }
 
 .post {
     border: 1px solid #626262;
     padding: 10px;
     margin-bottom: 10px;
-    border-radius: 5px; /* consistent rounded corners */
+    border-radius: 5px; 
 }
 
 .post p {
@@ -71,7 +71,7 @@
     background-color: #1b59af;
     cursor: pointer;
     transition: background-color 0.3s ease;
-    border-radius: 5px; /* consistent rounded corners */
+    border-radius: 5px; 
 }
 
 .post-actions button:hover {

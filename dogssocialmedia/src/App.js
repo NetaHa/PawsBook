@@ -1,7 +1,7 @@
 import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom';
 import Login from './Pages/LoginPage/Login';
 import Register from './Pages/RegisterPage/Register';
-import NotFound from './Pages/LoginPage/Login'; // Optional 404 component
+import NotFound from './Pages/LoginPage/Login'; 
 import Feed from './Pages/FeedPage/Feed';
 import FollowingUsers from './Pages/FollowingUsersPage/FollowingUsers';
 import Logout from './Components/Logout';
@@ -26,7 +26,7 @@ function App() {
         <Route path='/DogParksPage' element={<DogParks />} />
         <Route path='/ReadMe' element={<ReadMe />} />
         <Route path='/AdminPage' element={<Admin />} />        
-        <Route path="*" element={<NotFound />} /> {/* This is a catch-all route */}
+        <Route path="*" element={<NotFound />} /> 
       </Routes>
     </Router>
   );

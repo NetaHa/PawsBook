@@ -31,7 +31,6 @@ const Login = () => {
         }
       })
       .then(data => {
-        // Assuming your response contains a token
         const { token } = data;
         if (data.isAdmin) {
           localStorage.setItem('isAdmin', true);
@@ -39,7 +38,6 @@ const Login = () => {
           localStorage.setItem('isAdmin', false);
         }
 
-        // Set cookies based on "remember me" checkbox
         const expirationTime = rememberMe ? 10 * 24 * 60 * 60 * 1000 : 30 * 60 * 1000;
         const expirationDate = new Date(new Date().getTime() + expirationTime);
 

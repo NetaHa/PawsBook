@@ -1,13 +1,14 @@
 const express = require('express');
 const router = express.Router();
-const { User, readJsonAsync } = require('../models/User');
-const authenticate = require('../middleware/authenticate.js'); // 1. Import the middleware
+const { User } = require('../models/User');
+const { readData, USERS_PATH } = require('../models/persist');  
+const authenticate = require('../middleware/authenticate.js'); 
 
 // GET Endpoint to fetch all users
 router.get('/api/users', async (req, res) => {
     try {
-        const users = await readJsonAsync(User.dbPath);
-        res.json(users);  // Send users as JSON response
+        const users = await readData(USERS_PATH);
+        res.json(users);  
     } catch (err) {
         console.error(err);
         res.status(500).send('Error fetching users');
@@ -44,21 +45,17 @@ router.get('/api/users/currentUser', authenticate, async (req, res) => {
     }
 });
 
-router.post('/api/users/follow/:userId', authenticate, async (req, res) => { // 2. Apply middleware
-    console.log("Follow route accessed");
+router.post('/api/users/follow/:userId', authenticate, async (req, res) => { 
     try {
         const userIdToFollow = req.params.userId; 
-        const loggedInUserId = req.userId; // 3. Get the logged-in user's ID from req.userId
+        const loggedInUserId = req.userId; 
 
-        console.log(loggedInUserId);
-        // Find the logged-in user and update their following array
         const loggedInUser = await User.findById(loggedInUserId);
         if (!loggedInUser.following.includes(userIdToFollow)) {
             loggedInUser.following.push(userIdToFollow);
             await User.update(loggedInUser); 
         }
 
-        // Find the user to be followed and update their followers array
         const userToFollow = await User.findById(userIdToFollow);
         if (!userToFollow.followers.includes(loggedInUserId)) {
             userToFollow.followers.push(loggedInUserId);
@@ -71,11 +68,10 @@ router.post('/api/users/follow/:userId', authenticate, async (req, res) => { // 
     }
 });
 
-router.post('/api/users/unfollow/:userId', authenticate, async (req, res) => { // 2. Apply middleware
-    console.log("Unfollow route accessed");
+router.post('/api/users/unfollow/:userId', authenticate, async (req, res) => { 
     try {
         const userIdToUnfollow = req.params.userId;
-        const loggedInUserId = req.userId; // 3. Get
+        const loggedInUserId = req.userId; 
 
         // Find the logged-in user and update their following array
         const loggedInUser = await User.findById(loggedInUserId);

@@ -1,17 +1,16 @@
-const fs = require('fs');
 const path = require("path");
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
-const { v4: uuidv4 } = require('uuid');  // Import the UUID function
+const { v4: uuidv4 } = require('uuid');  
 const saltRounds = 10;
-const jwtSecret = process.env.JWT_SECRET;
+const { readData, writeData, USERS_PATH } = require('./persist');
 activityHistory = [];
 
 class User {
   static dbPath = path.join(__dirname, "data", "users.json");
 
   static async findOne(query) {
-    const users = await readJsonAsync(User.dbPath);
+    const users = await readData(USERS_PATH);
 
     const isMatch = (user) => {
       return Object.keys(query).every(key => user[key] === query[key]);
@@ -22,7 +21,7 @@ class User {
   }
 
   static async create(user) {
-    const users = await readJsonAsync(User.dbPath);
+    const users = await readData(USERS_PATH);
 
     // Assign a unique ID to the user
     user.id = uuidv4();
@@ -30,16 +29,11 @@ class User {
     // Hash the password before saving
     user.password = await bcrypt.hash(user.password, saltRounds);
 
-    // user.activityHistory = [{
-    //   event: 'Registered',  
-    //   timestamp: new Date().toISOString()
-    // }];
-
     user.following = [];
     user.followers = [];
 
     users.push(user);
-    await writeJsonAsync(User.dbPath, users);
+    await writeData(USERS_PATH, users);
   }
 
   static async validatePassword(inputPassword, storedPassword) {
@@ -47,37 +41,37 @@ class User {
   }
 
   static async findById(userId) {
-    const users = await readJsonAsync(User.dbPath);
+    const users = await readData(USERS_PATH);
     return users.find(user => user.id === userId);
   }
   static async addFollower(userId, followerId) {
-    const users = await readJsonAsync(User.dbPath);
+    const users = await readData(USERS_PATH);
     const user = users.find(u => u.id === userId);
     if (user) {
         user.followers.push(followerId);
-        await writeJsonAsync(User.dbPath, users);
+        await writeData(USERS_PATH, users);
     }
 }
 
 static async removeFollower(userId, followerId) {
-    const users = await readJsonAsync(User.dbPath);
+    const users = await readData(USERS_PATH);
     const user = users.find(u => u.id === userId);
     if (user) {
         user.followers = user.followers.filter(id => id !== followerId);
-        await writeJsonAsync(User.dbPath, users);
+        await writeData(USERS_PATH, users);
     }
 }
 static async update(updatedUser) {
-  const users = await readJsonAsync(User.dbPath);
+  const users = await readData(USERS_PATH);
   const index = users.findIndex(user => user.id === updatedUser.id);
   if (index !== -1) {
       users[index] = updatedUser;
-      await writeJsonAsync(User.dbPath, users);
+      await writeData(USERS_PATH, users);
   }
 }
 
 static async updateActivity(userId, activityType) {
-  const users = await readJsonAsync(User.dbPath);
+  const users = await readData(USERS_PATH);
   const user = users.find(u => u.id === userId);
   if (user) {
       if (!user.activityHistory) user.activityHistory = [];
@@ -88,7 +82,7 @@ static async updateActivity(userId, activityType) {
       };
 
       user.activityHistory.push(activity);
-      await writeJsonAsync(User.dbPath, users);
+      await writeData(USERS_PATH, users);
   }
 }
 
@@ -107,25 +101,5 @@ static async updateActivity(userId, activityType) {
   }
 }
 
-const readJsonAsync = (path) => {
-  return new Promise((resolve, reject) => fs.readFile(path, "utf8", (err, data) => {
-    if (err) {
-      reject(err);
-    } else {
-      resolve(JSON.parse(data));
-    }
-  }));
-}
-
-const writeJsonAsync = (path, data) => {
-  return new Promise((resolve, reject) => fs.writeFile(path, JSON.stringify(data, null, 2), { encoding: "utf8", flag: "w" }, (err) => {
-    if (err) {
-      reject(err);
-    } else {
-      resolve();
-    }
-  }));
-}
-
-module.exports = { User, readJsonAsync };
+module.exports = { User };
 

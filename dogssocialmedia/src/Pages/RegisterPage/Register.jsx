@@ -9,8 +9,8 @@ const Register = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [errorMsg, setErrorMsg] = useState(''); 
-
-  const navigate = useNavigate(); // Use the hook to get the navigate function
+  
+  const navigate = useNavigate(); 
 
   const validateEmail = (email) => {
     const re = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
@@ -20,13 +20,12 @@ const Register = () => {
   const validatePassword = (password) => {
     return password.length >= 5 && password.length <= 15;
   };
-  //new for pic upload
+
   const [selectedImage, setSelectedImage] = useState(null);
 
   const handleImageChange = (e) => {
     setSelectedImage(e.target.files[0]);
   };
-
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -49,15 +48,11 @@ const Register = () => {
     formData.append('dogName', dogName);
     formData.append('email', email);
     formData.append('password', password);
-    formData.append('profileImage', selectedImage); // Add the selected image
+    formData.append('profileImage', selectedImage); 
 
     
     fetch('http://localhost:5000/api/users/register', {  
       method: 'POST',
-      // headers: {
-      //   'Content-Type': 'application/json'
-      // },
-      // body: JSON.stringify(formData)
       body : formData
     })
       .then(response => {
@@ -68,8 +63,7 @@ const Register = () => {
         }
       })
       .then(data => {
-        console.log('Registration success');
-        navigate('/login');  // Redirect to login page after successful registration
+        navigate('/login');  
       })
       .catch(error => {
         console.error('Error:', error);
@@ -112,7 +106,7 @@ return (
         Profile Image:
         <input
         type="file"
-        accept="image/*" // To accept only image files
+        accept="image/*"
         onChange={(e) => handleImageChange(e)}
         />
       </label>

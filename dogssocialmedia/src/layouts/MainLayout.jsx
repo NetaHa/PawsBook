@@ -1,6 +1,6 @@
 import React from 'react';
 import HamburgerMenu from '../Components/HamburgerMenu/HamburgerMenu';
-import DarkMode from '../Components/DarkMode/DarkMode';  // Adjust the path based on your directory structure
+import DarkMode from '../Components/DarkMode/DarkMode';  
 import './MainLayout.css';
 
 const MainLayout = ({ children }) => {

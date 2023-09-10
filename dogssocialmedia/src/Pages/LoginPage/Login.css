@@ -3,7 +3,7 @@
   margin-bottom: 24px;
   text-align: center;
   color: #59ccfd; 
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);  /* To ensure the text stands out against the background */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);  
 }
 
 .login-container {

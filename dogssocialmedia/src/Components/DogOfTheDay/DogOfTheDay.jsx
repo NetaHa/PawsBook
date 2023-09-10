@@ -44,7 +44,6 @@ const DogOfTheDay = () => {
                         console.error('Fetch error:', error);
                     });
             } else {
-                // If there's no need to fetch a new image, use the cached one
                 const cachedImagePath = localStorage.getItem('dogOfDayImage');
                 setDogImage(cachedImagePath);
             }
@@ -52,7 +51,7 @@ const DogOfTheDay = () => {
     }, [isFeatureEnabled]); 
 
     if (!isFeatureEnabled) {
-        return null;  // Don't render the component if the feature is disabled.
+        return null;  
     }
 
     return (

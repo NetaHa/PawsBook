@@ -9,7 +9,6 @@ const DogsTipsPage = () => {
     'Train your dog with positive reinforcement techniques.',
     'Socialize your dog from a young age to ensure they are friendly with other dogs and people.',
     'Regular vet check-ups are essential to ensure your dog remains healthy.',
-    // Add as many tips as you need
   ];
 
   return (

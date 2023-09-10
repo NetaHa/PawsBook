@@ -46,6 +46,78 @@
       {
         "type": "login",
         "timestamp": "2023-09-09T18:41:56.928Z"
+      },
+      {
+        "type": "login",
+        "timestamp": "2023-09-10T08:25:15.629Z"
+      },
+      {
+        "type": "login",
+        "timestamp": "2023-09-10T11:04:31.205Z"
+      },
+      {
+        "type": "login",
+        "timestamp": "2023-09-10T11:07:39.066Z"
+      },
+      {
+        "type": "login",
+        "timestamp": "2023-09-10T11:08:04.432Z"
+      },
+      {
+        "type": "login",
+        "timestamp": "2023-09-10T11:12:39.916Z"
+      },
+      {
+        "type": "login",
+        "timestamp": "2023-09-10T11:12:55.708Z"
+      },
+      {
+        "type": "login",
+        "timestamp": "2023-09-10T11:13:08.527Z"
+      },
+      {
+        "type": "login",
+        "timestamp": "2023-09-10T11:14:09.588Z"
+      },
+      {
+        "type": "login",
+        "timestamp": "2023-09-10T11:42:56.893Z"
+      },
+      {
+        "type": "login",
+        "timestamp": "2023-09-10T11:46:27.017Z"
+      },
+      {
+        "type": "login",
+        "timestamp": "2023-09-10T11:53:18.326Z"
+      },
+      {
+        "type": "login",
+        "timestamp": "2023-09-10T12:22:14.085Z"
+      },
+      {
+        "type": "login",
+        "timestamp": "2023-09-10T12:27:53.286Z"
+      },
+      {
+        "type": "login",
+        "timestamp": "2023-09-10T12:50:36.715Z"
+      },
+      {
+        "type": "login",
+        "timestamp": "2023-09-10T13:21:16.180Z"
+      },
+      {
+        "type": "login",
+        "timestamp": "2023-09-10T13:22:47.484Z"
+      },
+      {
+        "type": "login",
+        "timestamp": "2023-09-10T13:25:07.513Z"
+      },
+      {
+        "type": "login",
+        "timestamp": "2023-09-10T13:26:01.794Z"
       }
     ],
     "following": [
@@ -193,6 +265,22 @@
       {
         "type": "login",
         "timestamp": "2023-09-09T12:49:11.775Z"
+      },
+      {
+        "type": "login",
+        "timestamp": "2023-09-10T07:06:36.656Z"
+      },
+      {
+        "type": "login",
+        "timestamp": "2023-09-10T12:17:38.674Z"
+      },
+      {
+        "type": "login",
+        "timestamp": "2023-09-10T12:20:26.944Z"
+      },
+      {
+        "type": "login",
+        "timestamp": "2023-09-10T12:42:46.302Z"
       }
     ]
   },
@@ -214,6 +302,84 @@
       {
         "type": "login",
         "timestamp": "2023-09-09T12:48:31.108Z"
+      }
+    ]
+  },
+  {
+    "userName": "Hadas_sp",
+    "ownerName": "Hadas",
+    "dogName": "rojer",
+    "email": "hadas@gmail.com",
+    "password": "$2b$10$TmYEHgXtfogpvxkUhQ/FougHIv9tXjHKPxzfeB16m26vzMSjFSUYq",
+    "profileImagePath": "uploads\\1694327777544-hadasDog.jpg",
+    "id": "c63c21f6-9fda-44d6-a570-62a0ff3ae9ee",
+    "following": [],
+    "followers": [],
+    "activityHistory": [
+      {
+        "type": "login",
+        "timestamp": "2023-09-10T06:36:30.052Z"
+      }
+    ]
+  },
+  {
+    "userName": "test1",
+    "ownerName": "test1",
+    "dogName": "test",
+    "email": "test1@gmail.com",
+    "password": "$2b$10$nOun1fnXW38ku5UgbvThu.gFZcCis9Flkt6Yj6D6Bs/M8eSVVYjHW",
+    "profileImagePath": "uploads\\1694344624718-Alferdo.jpg",
+    "id": "bda93251-5303-44df-b6b2-a2ce537c4747",
+    "following": [],
+    "followers": [],
+    "activityHistory": [
+      {
+        "type": "login",
+        "timestamp": "2023-09-10T11:18:27.589Z"
+      },
+      {
+        "type": "login",
+        "timestamp": "2023-09-10T11:20:19.457Z"
+      },
+      {
+        "type": "login",
+        "timestamp": "2023-09-10T11:20:36.553Z"
+      },
+      {
+        "type": "login",
+        "timestamp": "2023-09-10T11:29:27.762Z"
+      },
+      {
+        "type": "login",
+        "timestamp": "2023-09-10T11:30:23.533Z"
+      },
+      {
+        "type": "login",
+        "timestamp": "2023-09-10T11:37:51.049Z"
+      },
+      {
+        "type": "login",
+        "timestamp": "2023-09-10T11:39:01.368Z"
+      },
+      {
+        "type": "login",
+        "timestamp": "2023-09-10T11:53:51.986Z"
+      },
+      {
+        "type": "login",
+        "timestamp": "2023-09-10T12:00:50.515Z"
+      },
+      {
+        "type": "login",
+        "timestamp": "2023-09-10T12:03:01.789Z"
+      },
+      {
+        "type": "login",
+        "timestamp": "2023-09-10T12:09:14.817Z"
+      },
+      {
+        "type": "login",
+        "timestamp": "2023-09-10T12:09:38.161Z"
       }
     ]
   }
